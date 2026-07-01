@@ -1,26 +1,40 @@
 # Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
 
 # Virtual Environment
 venv/
 .env
 
-# macOS
-.DS_Store
-
 # VS Code
 .vscode/
+
+# macOS
+.DS_Store
 
 # Jupyter
 .ipynb_checkpoints/
 
-# ML Models (optional)
+# ML Models
 models/*.pkl
+backend/ml/saved_models/*.pkl
 
 # Dataset cache
 datasets/processed/
+datasets/cleaned/
 
 # Logs
 *.log
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# Pytest
+.pytest_cache/
+
+# Coverage
+.coverage
+htmlcov/
