@@ -1,6 +1,6 @@
 # 🧠 Insight AutoML
 
-> AI-Powered Machine Learning & Data Analytics Platform built with Streamlit, FastAPI, Scikit-learn and Ollama.
+> AI-Powered AutoML & Data Analytics Platform built with **Streamlit**, **FastAPI**, **Scikit-learn**, **Ollama**, and **Docker**.
 
 
 ## 🚀 Overview
@@ -10,22 +10,25 @@ Insight AutoML is an end-to-end machine learning platform that allows users to u
 The project is designed to simplify the machine learning workflow while providing an intuitive interface for students, researchers, and data analysts.
 
 
-# ✨ Features---
+# ✨ Features
 
 - 📂 Upload CSV datasets
-- 📊 Automatic Exploratory Data Analysis (EDA)
-- 🎯 Target column selection
-- 🤖 Train multiple Machine Learning models
-- 🏆 Automatic best model selection
-- 📈 Interactive model comparison
-- 📉 Accuracy visualization
+- 🔍 Automatic Dataset Preview
+- 📊 Exploratory Data Analysis (EDA)
+- 📉 Correlation Heatmap
+- 🎯 Target Column Selection
+- 🤖 Train Multiple Machine Learning Models
+- 🏆 Automatic Best Model Selection
+- 📈 Model Performance Comparison
+- 📊 Accuracy Visualization
 - 💬 AI Dataset Assistant (Powered by Ollama)
-- 📥 Download model performance results
-- ⚡ FastAPI backend
-- 🎨 Modern Streamlit interface
+- 📥 Download Model Performance as CSV
+- ⚡ FastAPI Backend
+- 🎨 Interactive Streamlit Interface
+- 🐳 Docker Support
 
 
-#  🛠 Tech Stack
+# 🛠 Tech Stack
 
 ## Frontend
 - Streamlit
@@ -37,14 +40,23 @@ The project is designed to simplify the machine learning workflow while providin
 - Scikit-learn
 - Pandas
 - NumPy
+- SciPy
+
+## Data Visualization
+- Plotly
+- Matplotlib
+- Seaborn
 
 ## AI
 - Ollama (Llama 3)
 
-## Visualization
-- Plotly
-- Matplotlib
-- Seaborn
+## DevOps
+- Docker
+- Docker Compose
+
+## Version Control
+- Git
+- GitHub
 
 
 
@@ -53,29 +65,51 @@ The project is designed to simplify the machine learning workflow while providin
 
 InsightAI-AutoML
 │
-├── backend
-│   ├── api
-│   ├── services
-│   ├── ml
-│   └── main.py
+├── backend/
 │
-├── frontend
-│   ├── app.py
-│   ├── header.py
-│   ├── sidebar.py
-│   └── eda.py
+├── frontend/
 │
-├── datasets
-├── models
-├── reports
-├── screenshots
+├── datasets/
+│
+├── models/
+│
+├── reports/
+│
+├── screenshots/
+│
+├── Dockerfile.backend
+├── Dockerfile.frontend
+├── docker-compose.yml
+├── .dockerignore
 │
 ├── requirements.txt
 ├── README.md
+├── LICENSE
 └── .gitignore
 
 
 
+## 🤖 AI Dataset Assistant
+
+The AI assistant uses **Ollama (Llama 3)**.
+
+### Install Ollama
+
+https://ollama.com
+
+### Start Ollama
+
+```bash
+ollama serve
+```
+
+### Download the model
+
+```bash
+ollama pull llama3
+```
+
+> **Note:** The AI Assistant requires Ollama to be running locally. Other features of Insight AutoML work independently of Ollama.
 
 
 ## ⚙️ Installation
@@ -128,7 +162,27 @@ uvicorn backend.main:app --reload
 streamlit run frontend/app.py
 ```
 
+# 🐳 Docker
 
+Build and run the project:
+
+```bash
+docker compose up --build
+```
+
+Backend:
+
+```
+http://localhost:8000
+```
+
+Frontend:
+
+```
+http://localhost:8501
+```
+
+> **Note:** The AI Dataset Assistant requires Ollama to be installed and running locally.
 
 
 # 🔄 Workflow
