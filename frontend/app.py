@@ -11,6 +11,8 @@ from charts import show_accuracy_chart
 from components import show_leaderboard
 from eda import show_eda
 
+BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
+
 
 st.set_page_config(
     page_title="Insight AutoML | AI Data Analyst",
@@ -84,7 +86,7 @@ if uploaded_file is not None:
             try:
 
                 response = requests.post(
-                    "http://127.0.0.1:8000/train",
+                   f"{BACKEND_URL}/train",
                     json={
                         "file_path": save_path,
                         "target_column": target_column
@@ -197,7 +199,7 @@ if uploaded_file is not None:
             }
 
             response = requests.post(
-                "http://127.0.0.1:8000/chat",
+                f"{BACKEND_URL}/chat",
                 json={
                     "dataset_info": dataset_info,
                     "metrics": st.session_state["result"]["metrics"],
