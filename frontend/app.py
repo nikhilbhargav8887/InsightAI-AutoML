@@ -81,76 +81,82 @@ if uploaded_file is not None:
 
     if st.button("🚀 Train AI", use_container_width=True):
 
-        with st.spinner("Training models... Please wait..."):
+     with st.spinner("Training models... Please wait..."):
 
-            try:
+        try:
 
-                response = requests.post(
-                   f"{BACKEND_URL}/train",
-                    json={
-                        "file_path": save_path,
-                        "target_column": target_column
-                    }
-                )
+            response = requests.post(
+                f"{BACKEND_URL}/train",
+                files={
+                    "file": (
+                        uploaded_file.name,
+                        uploaded_file.getvalue(),
+                        "text/csv"
+                    )
+                },
+                data={
+                    "target_column": target_column
+                }
+            )
 
-                if response.status_code != 200:
-                    st.error("❌ Training Failed")
-                    st.text(response.text)
-                    st.stop()
-
-                result = response.json()
-                st.session_state["result"] = result
-                st.session_state["result"] = result
-                st.session_state["df"] = df
-
-            except Exception as e:
-                st.error(f"❌ {e}")
+            if response.status_code != 200:
+                st.error("❌ Training Failed")
+                st.text(response.text)
                 st.stop()
 
-        st.success("✅ Training Completed Successfully!")
+            result = response.json()
 
-        metrics = result["metrics"]
+            st.session_state["result"] = result
+            st.session_state["df"] = df
 
-        comparison = []
+        except Exception as e:
+            st.error(f"❌ {e}")
+            st.stop()
 
-        for model, values in metrics.items():
+    st.success("✅ Training Completed Successfully!")
 
-            comparison.append({
-                "Model": model,
-                "Accuracy": values["accuracy"],
-                "Precision": values["precision"],
-                "Recall": values["recall"],
-                "F1 Score": values["f1_score"]
-            })
+    result = st.session_state["result"]
+    metrics = result["metrics"]
 
-        comparison_df = pd.DataFrame(comparison)
+    comparison = []
 
-        comparison_df = comparison_df.sort_values(
-            by="Accuracy",
-            ascending=False
-        )
-        st.session_state["comparison_df"] = comparison_df
+    for model, values in metrics.items():
+
+        comparison.append({
+            "Model": model,
+            "Accuracy": values["accuracy"],
+            "Precision": values["precision"],
+            "Recall": values["recall"],
+            "F1 Score": values["f1_score"]
+        })
+
+    comparison_df = pd.DataFrame(comparison)
+
+    comparison_df = comparison_df.sort_values(
+        by="Accuracy",
+        ascending=False
+    )
+
+    st.session_state["comparison_df"] = comparison_df
+
+    st.markdown("---")
+
+    show_cards(
+        result["best_model"],
+        comparison_df
+    )
+
+    st.markdown("---")
+
+    show_leaderboard(comparison_df)
+
+    st.markdown("---")
+
+    show_accuracy_chart(comparison_df)
+
+    st.markdown("---")
 
 
-        st.markdown("---")
-
-        show_cards(
-            result["best_model"],
-            comparison_df
-        )
-
-        st.markdown("---")
-
-        show_leaderboard(comparison_df)
-
-        st.markdown("---")
-
-        show_accuracy_chart(comparison_df)
-        st.markdown("---")
-       
-
-
-        st.markdown("---")
 
     st.subheader("🤖 AI Dataset Assistant")
 

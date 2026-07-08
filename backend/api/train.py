@@ -1,22 +1,28 @@
-from fastapi import APIRouter
-from pydantic import BaseModel
+from fastapi import APIRouter, UploadFile, File, Form
+import os
 
 from backend.services.training_service import TrainingService
 
 router = APIRouter()
 
-
-class TrainRequest(BaseModel):
-    file_path: str
-    target_column: str
+UPLOAD_DIR = "datasets/raw"
+os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
 @router.post("/train")
-def train_model(request: TrainRequest):
+async def train_model(
+    file: UploadFile = File(...),
+    target_column: str = Form(...)
+):
 
-    service = TrainingService()
+    file_path = os.path.join(UPLOAD_DIR, file.filename)
 
-    return service.train(
-        request.file_path,
-        request.target_column
+    with open(file_path, "wb") as f:
+        f.write(await file.read())
+
+    result = TrainingService().train(
+        file_path=file_path,
+        target_column=target_column
     )
+
+    return result

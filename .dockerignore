@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+venv/
+.env
+
+# Git
+.git/
+.gitignore
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python cache
+.pytest_cache/
+
+# IDE
+.vscode/
+
+# ML Models
+models/
+
+# Reports (optional)
+reports/
+
+# Uploaded datasets (optional)
+datasets/
+
+# Documentation
+README.md
+LICENSE
