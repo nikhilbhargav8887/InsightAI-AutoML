@@ -235,28 +235,4 @@ The platform currently supports:
 
 
 
-# 👨‍💻 Author
 
- Nikhil Tripathi
-
- Engineering Student.....
-
- Passionate about
-
-- Data Analytics
-- Data Science
-- Machine Learning
-- Generative AI
-
-GitHub:
-https://github.com/nikhilbhargav8887
-
-
-
- ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub!!!
-
-## 📜 License
-
-This project is licensed under the MIT License.
