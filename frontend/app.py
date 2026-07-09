@@ -11,8 +11,10 @@ from charts import show_accuracy_chart
 from components import show_leaderboard
 from eda import show_eda
 
-BACKEND_URL = os.getenv("BACKEND_URL", "http://127.0.0.1:8000")
-
+BACKEND_URL = os.getenv(
+    "BACKEND_URL",
+    "https://insightai-automl.onrender.com"
+)
 
 st.set_page_config(
     page_title="Insight AutoML | AI Data Analyst",
