@@ -80,10 +80,9 @@ if uploaded_file is not None:
         "🎯 Select Target Column",
         df.columns
     )
+if st.button("🚀 Train AI", use_container_width=True):
 
-    if st.button("🚀 Train AI", use_container_width=True):
-
-     with st.spinner("Training models... Please wait..."):
+    with st.spinner("Training models... Please wait..."):
 
         try:
 
@@ -106,14 +105,19 @@ if uploaded_file is not None:
                 st.text(response.text)
                 st.stop()
 
-            result = response.json()
-
-            st.session_state["result"] = result
+            st.session_state["result"] = response.json()
             st.session_state["df"] = df
 
         except Exception as e:
             st.error(f"❌ {e}")
             st.stop()
+
+
+# ===========================
+# SHOW RESULTS ONLY IF TRAINED
+# ===========================
+
+if "result" in st.session_state:
 
     st.success("✅ Training Completed Successfully!")
 
@@ -157,8 +161,6 @@ if uploaded_file is not None:
     show_accuracy_chart(comparison_df)
 
     st.markdown("---")
-
-
 
     st.subheader("🤖 AI Dataset Assistant")
 
