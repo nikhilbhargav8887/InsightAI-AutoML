@@ -164,80 +164,17 @@ if "result" in st.session_state:
 
     st.subheader("🤖 AI Dataset Assistant")
 
-    st.markdown("""
-    Ask questions about your uploaded dataset, model performance, preprocessing,
-    feature engineering, or machine learning concepts.
-    """)
+st.info("""
+🚀 **Coming Soon in Version 1.1**
 
-    with st.expander("💡 Example Questions"):
+The AI Dataset Assistant is currently under development.
 
-        st.markdown("""
-    - Which model performed the best?
-    - Why is Random Forest better than Logistic Regression?
-    - Is my dataset balanced?
-    - Which columns contain missing values?
-    - Suggest preprocessing steps.
-    - Suggest feature engineering.
-    - How can I improve accuracy?
-    """)
+### Planned Features
+- 🤖 Google Gemini Integration
+- 📊 Natural Language Dataset Analysis
+- 💡 Smart Feature Engineering Suggestions
+- 📈 Model Improvement Recommendations
+- 📝 Automatic Dataset Insights
 
-    question = st.text_input(
-        "💬 Ask your question",
-        placeholder="Example: Which model performed best and why?"
-    )
-
-    if st.button("🚀 Ask AI", use_container_width=True):
-
-        if "result" not in st.session_state:
-            st.warning("⚠️ Please train the model first.")
-            st.stop()
-
-        if "df" not in st.session_state:
-            st.warning("⚠️ Please upload a dataset first.")
-            st.stop()
-
-        with st.spinner("🤖 Insight AutoML is analyzing your dataset..."):
-
-            df = st.session_state["df"]
-
-            dataset_info = {
-                "columns": df.columns.tolist(),
-                "shape": list(df.shape),
-                "missing_values": df.isnull().sum().to_dict(),
-                "dtypes": df.dtypes.astype(str).to_dict(),
-                "statistics": df.describe(include="all").fillna("").to_dict()
-            }
-
-            response = requests.post(
-                f"{BACKEND_URL}/chat",
-                json={
-                    "dataset_info": dataset_info,
-                    "metrics": st.session_state["result"]["metrics"],
-                    "question": question
-                }
-            )
-
-            if response.status_code == 200:
-
-                answer = response.json()["answer"]
-
-                st.markdown("## 🤖 AI Response")
-
-                st.markdown(
-                    f"""
-    <div style="
-    background:#F4F6F8;
-    padding:20px;
-    border-radius:12px;
-    border-left:6px solid #2563EB;
-    ">
-
-    {answer}
-
-    </div>
-    """,
-                    unsafe_allow_html=True,
-                )
-
-            else:
-                st.error(response.text)
+Thank you for trying **Insight AutoML**! Stay tuned for the next release.
+""")

@@ -1,60 +1,113 @@
 # 🧠 Insight AutoML
 
-> AI-Powered AutoML & Data Analytics Platform built with **Streamlit**, **FastAPI**, **Scikit-learn**, **Ollama**, and **Docker**.
+> 🚀 An end-to-end Machine Learning platform that automates dataset analysis, exploratory data analysis (EDA), model training, evaluation, and visualization through an interactive web interface.
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-009688?logo=fastapi)
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4B4B?logo=streamlit)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-Machine%20Learning-F7931E?logo=scikitlearn)
+![License](https://img.shields.io/badge/License-MIT-yellow)
 
 
-## 🚀 Overview
 
-Insight AutoML is an end-to-end machine learning platform that allows users to upload datasets, automatically train multiple machine learning models, compare their performance, perform Exploratory Data Analysis (EDA), and interact with an AI-powered dataset assistant using Ollama.
+# 🌐 Live Demo
 
-The project is designed to simplify the machine learning workflow while providing an intuitive interface for students, researchers, and data analysts.
+### 🔗 Frontend
+
+https://insightai-automl-frontend.onrender.com
+
+### 🔗 Backend API
+
+https://insightai-automl.onrender.com
+
+
+
+# 📌 Overview
+
+Insight AutoML is an end-to-end Machine Learning platform that simplifies the complete ML workflow. Users can upload CSV datasets, perform Exploratory Data Analysis (EDA), train multiple machine learning models, compare their performance, and identify the best-performing model through an intuitive web interface.
+
+The project is designed for students, data analysts, and machine learning enthusiasts who want to automate repetitive ML tasks while learning the complete machine learning pipeline.
+
 
 
 # ✨ Features
 
 - 📂 Upload CSV datasets
-- 🔍 Automatic Dataset Preview
-- 📊 Exploratory Data Analysis (EDA)
+- 📊 Automatic Dataset Preview
+- 📈 Exploratory Data Analysis (EDA)
 - 📉 Correlation Heatmap
+- 📋 Missing Value Analysis
 - 🎯 Target Column Selection
 - 🤖 Train Multiple Machine Learning Models
 - 🏆 Automatic Best Model Selection
-- 📈 Model Performance Comparison
-- 📊 Accuracy Visualization
-- 💬 AI Dataset Assistant (Powered by Ollama)
-- 📥 Download Model Performance as CSV
-- ⚡ FastAPI Backend
-- 🎨 Interactive Streamlit Interface
+- 📊 Model Performance Comparison
+- 📈 Accuracy Visualization
+- 📥 Download Model Performance
+- ⚡ FastAPI REST Backend
+- 🎨 Interactive Streamlit Dashboard
 - 🐳 Docker Support
+- ☁️ Cloud Deployment on Render
+
+
+
+# 🏗️ System Architecture
+
+```text
+                 User
+                   │
+                   ▼
+        Streamlit Frontend
+                   │
+             REST API Calls
+                   │
+                   ▼
+           FastAPI Backend
+                   │
+        Data Preprocessing
+                   │
+        Machine Learning Models
+                   │
+      Performance Evaluation
+                   │
+                   ▼
+      Interactive Dashboard
+```
+
 
 
 # 🛠 Tech Stack
 
 ## Frontend
+
 - Streamlit
 
 ## Backend
+
 - FastAPI
+- Uvicorn
 
 ## Machine Learning
+
 - Scikit-learn
 - Pandas
 - NumPy
 - SciPy
 
-## Data Visualization
+## Visualization
+
 - Plotly
 - Matplotlib
 - Seaborn
 
-## AI
-- Ollama (Llama 3)
+## Deployment
 
-## DevOps
 - Docker
 - Docker Compose
+- Render
 
 ## Version Control
+
 - Git
 - GitHub
 
@@ -62,19 +115,14 @@ The project is designed to simplify the machine learning workflow while providin
 
 # 📂 Project Structure
 
-
+```
 InsightAI-AutoML
 │
 ├── backend/
-│
 ├── frontend/
-│
 ├── datasets/
-│
 ├── models/
-│
 ├── reports/
-│
 ├── screenshots/
 │
 ├── Dockerfile.backend
@@ -86,35 +134,13 @@ InsightAI-AutoML
 ├── README.md
 ├── LICENSE
 └── .gitignore
-
-
-
-## 🤖 AI Dataset Assistant
-
-The AI assistant uses **Ollama (Llama 3)**.
-
-### Install Ollama
-
-https://ollama.com
-
-### Start Ollama
-
-```bash
-ollama serve
 ```
 
-### Download the model
-
-```bash
-ollama pull llama3
-```
-
-> **Note:** The AI Assistant requires Ollama to be running locally. Other features of Insight AutoML work independently of Ollama.
 
 
-## ⚙️ Installation
+# ⚙️ Installation
 
-# Clone Repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/nikhilbhargav8887/InsightAI-AutoML.git
@@ -122,31 +148,30 @@ git clone https://github.com/nikhilbhargav8887/InsightAI-AutoML.git
 cd InsightAI-AutoML
 ```
 
-# Create Virtual Environment
+## Create Virtual Environment
 
 ```bash
 python -m venv venv
 ```
 
-# Activate Environment
-
-Mac/Linux
+### Mac/Linux
 
 ```bash
 source venv/bin/activate
 ```
 
-Windows
+### Windows
 
 ```bash
 venv\Scripts\activate
 ```
 
-# Install Dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
+
 
 
 # ▶️ Run Backend
@@ -156,38 +181,40 @@ uvicorn backend.main:app --reload
 ```
 
 
+
 # ▶️ Run Frontend
 
 ```bash
 streamlit run frontend/app.py
 ```
 
+
+
 # 🐳 Docker
 
-Build and run the project:
+Build and run the complete application
 
 ```bash
 docker compose up --build
 ```
 
-Backend:
+Backend
 
 ```
 http://localhost:8000
 ```
 
-Frontend:
+Frontend
 
 ```
 http://localhost:8501
 ```
 
-> **Note:** The AI Dataset Assistant requires Ollama to be installed and running locally.
 
 
-# 🔄 Workflow
+# 🔄 Machine Learning Workflow
 
-
+```text
 Upload Dataset
         │
         ▼
@@ -197,54 +224,41 @@ Dataset Preview
 Exploratory Data Analysis
         │
         ▼
+Target Selection
+        │
+        ▼
 Train Multiple ML Models
         │
         ▼
-Compare Performance
+Evaluate Performance
+        │
+        ▼
+Compare Results
         │
         ▼
 Select Best Model
         │
         ▼
-Ask AI Dataset Assistant
-        │
-        ▼
-Download Results
+Interactive Dashboard
+```
 
 
 
-
-
-## 🤖 AI Dataset Assistant
-
-The application integrates **Ollama** to provide an intelligent AI assistant capable of answering questions related to:
-
-- Dataset structure
-- Missing values
-- Feature engineering
-- Model performance
-- Machine Learning concepts
-- Preprocessing recommendations
-
-
-
-## 📊 Machine Learning Models
+# 📊 Machine Learning Models
 
 The platform currently supports:
 
 - Logistic Regression
-- Random Forest
 - Decision Tree
-- KNN
+- Random Forest
 - Support Vector Machine (SVM)
+- K-Nearest Neighbors (KNN)
 
+---
 
+# 📸 Screenshots
 
-## 📸 Screenshots
-
-
-
-## 🏠 Home Page
+## 🏠 Home
 
 ![Home](screenshots/home.png)
 
@@ -256,32 +270,72 @@ The platform currently supports:
 
 ---
 
-## 🏆 Model Training & Comparison
+## 🏆 Model Training
 
 ![Training](screenshots/training.png)
 
----
 
-## 🤖 AI Dataset Assistant
 
-![AI Assistant](screenshots/ai_assistant.png)
-
----
-
-## 📈 Accuracy Comparison
+## 📈 Model Comparison
 
 ![Comparison](screenshots/comparison.png)
 
 
 
-
 # 🎯 Future Improvements
 
-- XGBoost & LightGBM integration
-- Hyperparameter tuning
+### 🤖 Artificial Intelligence
+
+- Google Gemini Integration
+- AI Dataset Insights
+- Natural Language Data Analysis
+
+### 📊 Machine Learning
+
+- XGBoost
+- LightGBM
+- Hyperparameter Optimization
+
+### 📈 Analytics
+
 - SHAP Explainability
-- Power BI Dashboard Integration
-- Tableau Dashboard Integration
-- Cloud Deployment
+- PDF Reports
+- Advanced Visualizations
+
+### ☁️ Platform
+
 - User Authentication
-- Model Persistence
+- Cloud Storage
+- Model Versioning
+
+
+
+# 👨‍💻 Author
+
+**Nikhil Tripathi**
+
+
+🔗 GitHub: https://github.com/nikhilbhargav8887
+
+🔗 LinkedIn: https://www.linkedin.com/in/nikhil-tripathi-3795773b2/#:~:text=www.linkedin.com/in/nikhil%2Dtripathi%2D3795773b2
+
+
+
+# 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome.
+
+If you'd like to improve this project, feel free to fork the repository and submit a pull request.
+
+
+# ⭐ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates future development.
+
+
+
+# 📜 License
+
+This project is licensed under the MIT License.
