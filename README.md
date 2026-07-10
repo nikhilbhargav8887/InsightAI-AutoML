@@ -258,29 +258,45 @@ The platform currently supports:
 
 # 📸 Screenshots
 
-## 🏠 Home
+## Home
 
 ![Home](screenshots/home.png)
 
 ---
 
-## 📊 Exploratory Data Analysis
+## Dataset Upload
+
+![Dataset](screenshots/dataset.png)
+
+---
+
+## Exploratory Data Analysis
 
 ![EDA](screenshots/eda.png)
 
 ---
 
-## 🏆 Model Training
+## Target Selection
+
+![Target](screenshots/target_selection.png)
+
+---
+
+## Model Training
 
 ![Training](screenshots/training.png)
 
+---
 
-
-## 📈 Model Comparison
+## Model Comparison
 
 ![Comparison](screenshots/comparison.png)
 
+---
 
+## Leaderboard
+
+![Leaderboard](screenshots/correlationboard.png)
 
 # 🎯 Future Improvements
 
