@@ -294,9 +294,9 @@ The platform currently supports:
 
 ---
 
-## Leaderboard
+## Correlationboard
 
-![Leaderboard](screenshots/correlationboard.png)
+![Correlationboard](screenshots/correlationboard.png)
 
 # 🎯 Future Improvements
 
