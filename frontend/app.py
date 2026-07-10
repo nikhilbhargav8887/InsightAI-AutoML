@@ -164,17 +164,17 @@ if "result" in st.session_state:
 
     st.subheader("🤖 AI Dataset Assistant")
 
-st.info("""
-🚀 **Coming Soon in Version 1.1**
+    st.info("""
+    🚀 **Coming Soon in Version 1.1**
 
-The AI Dataset Assistant is currently under development.
+     The AI Dataset Assistant is currently under development.
 
-### Planned Features
-- 🤖 Google Gemini Integration
-- 📊 Natural Language Dataset Analysis
-- 💡 Smart Feature Engineering Suggestions
-- 📈 Model Improvement Recommendations
-- 📝 Automatic Dataset Insights
+        ### Planned Features
+        - 🤖 Google Gemini Integration
+        - 📊 Natural Language Dataset Analysis
+        - 💡 Smart Feature Engineering Suggestions
+        - 📈 Model Improvement Recommendations
+        - 📝 Automatic Dataset Insights
 
-Thank you for trying **Insight AutoML**! Stay tuned for the next release.
-""")
+     Thank you for trying **Insight AutoML**! Stay tuned for the next release.
+        """)
