@@ -5,52 +5,75 @@ def show_sidebar():
 
     st.sidebar.markdown("# 🧠 Insight AutoML")
 
-    st.sidebar.caption("AI-Powered Data Analytics Platform")
+    st.sidebar.caption("Automated Machine Learning & Data Analytics Platform")
 
     st.sidebar.markdown("---")
 
     st.sidebar.success("🟢 Backend Connected")
 
-    st.sidebar.markdown("## 🚀 Workflow")
-
+   
     st.sidebar.markdown("""
-✅ **1. Upload CSV Dataset**
+    ## 🚀 Workflow
 
-✅ **2. Explore Dataset (EDA)**
+    ✅ Upload Dataset
 
-✅ **3. Select Target Column**
+    ✅ Exploratory Data Analysis
 
-✅ **4. Train Multiple ML Models**
+    ✅ Select Target Column
 
-✅ **5. Compare Model Performance**
+    ✅ Train ML Models
 
-✅ **6. Ask AI About Your Dataset**
-""")
+    ✅ Compare Performance
+    """)
+
+    st.sidebar.markdown("---")
+
+    st.sidebar.info("""
+    ### 💡 Quick Tips
+
+    ✅ Upload a clean CSV dataset
+
+    🎯 Choose the correct target column
+
+    📊 Compare multiple ML models
+
+    🏆 Use the highest accuracy model
+
+    📈 Review performance metrics
+    """)
 
     st.sidebar.markdown("---")
 
     st.sidebar.markdown("## 🛠 Tech Stack")
 
     st.sidebar.markdown("""
-- 🐍 Python
-- ⚡ FastAPI
-- 🎨 Streamlit
-- 🤖 Ollama (Llama 3)
-- 📊 Scikit-learn
-- 🐼 Pandas
-""")
+    - 🐍 **Python**
+    - ⚡ **FastAPI**
+    - 🎨 **Streamlit**
+    - 🤖 **Scikit-learn**
+    - 📊 **Pandas**
+    - 📈 **NumPy**
+    """)
 
     st.sidebar.markdown("---")
 
+ 
     st.sidebar.info(
-        "💡 Tip: Ask the AI questions like:\n\n"
-        "- Which model performed best?\n"
-        "- Is my dataset balanced?\n"
-        "- Suggest preprocessing steps."
-    )
+            """
+        💡 **Tips**
 
-    st.sidebar.markdown("---")
+        • Upload a clean CSV dataset
 
-    st.sidebar.caption("Version 1.0")
+        • Select the correct target column
 
-    st.sidebar.caption("Made with ❤️ by Nikhil Tripathi")
+        • Compare model performance
+
+        • Download the results.
+        """
+        )
+
+    st.sidebar.markdown("-----")
+
+    st.sidebar.caption("Version • v1.0.0")
+
+    st.sidebar.caption("Made with 💜 by Nikhil Tripathi")

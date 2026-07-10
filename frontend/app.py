@@ -17,7 +17,7 @@ BACKEND_URL = os.getenv(
 )
 
 st.set_page_config(
-    page_title="Insight AutoML | AI Data Analyst",
+    page_title="Insight AutoML | Data Analyst",
     page_icon="🤖",
     layout="wide"
 )
@@ -28,7 +28,7 @@ show_sidebar()
 show_header()
 
 st.markdown("""
-### 🚀 Intelligent Machine Learning & Data Analytics Platform
+### 🚀 Machine Learning & Data Analytics Platform
 
 [Upload your dataset and let Insight AutoML]:
 
@@ -37,8 +37,6 @@ st.markdown("""
 ✅ Train Multiple ML Models
 
 ✅ Compare Performance
-
-✅ Generate AI Insights
 
 ---
 """)
@@ -80,7 +78,7 @@ if uploaded_file is not None:
         "🎯 Select Target Column",
         df.columns
     )
-if st.button("🚀 Train AI", use_container_width=True):
+if st.button("🚀 Train Models", use_container_width=True):
 
     with st.spinner("Training models... Please wait..."):
 
