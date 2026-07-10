@@ -29,7 +29,9 @@ def show_eda(df):
     ))
 
     st.subheader("Statistics")
-    st.dataframe(df.describe(include="all"))
+
+    stats_df = df.describe(include="all").astype(str)
+    st.dataframe(stats_df)
 
 
 
