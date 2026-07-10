@@ -86,17 +86,22 @@ if st.button("🚀 Train Models", use_container_width=True):
 
             response = requests.post(
                 f"{BACKEND_URL}/train",
-                files={
-                    "file": (
-                        uploaded_file.name,
-                        uploaded_file.getvalue(),
-                        "text/csv"
-                    )
-                },
-                data={
-                    "target_column": target_column
-                }
-            )
+                    files={
+                        "file": (
+                            uploaded_file.name,
+                            uploaded_file.getvalue(),
+                            "text/csv",
+                        )
+                    },
+                    data={
+                        "target_column": target_column,
+                    },
+                    timeout=300
+         )
+            st.write("Status Code:", response.status_code)
+            st.write("Content-Type:", response.headers.get("Content-Type"))
+            st.write("Response Preview:")
+            st.code(response.text[:500])
 
             if response.status_code != 200:
                 st.error("❌ Training Failed")
