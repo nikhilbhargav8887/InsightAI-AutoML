@@ -98,10 +98,7 @@ if st.button("🚀 Train Models", use_container_width=True):
                     },
                     timeout=300
          )
-            st.write("Status Code:", response.status_code)
-            st.write("Content-Type:", response.headers.get("Content-Type"))
-            st.write("Response Preview:")
-            st.code(response.text[:500])
+        
 
             if response.status_code != 200:
                 st.error("❌ Training Failed")
